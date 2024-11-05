@@ -1,0 +1,41 @@
+{{define "card"}}
+<div class="ArtistBox">
+    <div class="artist-preview">
+        <img class= "ArtistImage" src="{{ .Image}}">
+        <div>{{ .Name }}</div>
+        <button class="LearnMoreButton" onclick="togglePopup('{{ .Id }}')" >Learn More</button>
+    </div>
+    <div class="artist-popup" id="{{ .Id}}">
+        <div class="overlay"></div>
+        <div class="content">
+            <img class ="CloseButton" src="../static/close.png" onclick="togglePopup('{{ .Id }}')">
+            <div class="artist-popup">
+                <div class="all-info">
+                    <div class="artist-main-info">
+                        <img class= "ArtistImage-popup" src="{{ .Image}}">
+                        <h3>{{ .Name }}</h3>
+                        <h3>Created on {{.CreationDate}}</h3>
+                        <h3>First album on {{.FirstAlbum}}</h3>
+                    </div>
+                    <div class="members"> 
+                        <h2>Members:</h2>
+                        <p>{{range .Members}}</p>
+                        <p>{{.}}</p>
+                          {{end}}
+                      </div>
+                    <div class="relations">
+                        <h2>Concerts:</h2>
+                        <p> {{range $key,$value := .Relations}}</p>
+                        <h4>{{ $key }}: </h4>
+                            <p>{{range $value }}
+                             {{.}}</p>
+                            {{ end }}
+                            {{ end }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{{end}}
+

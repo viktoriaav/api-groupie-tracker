@@ -1,0 +1,181 @@
+.OverallLayout {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Raleway', sans-serif;
+    background-color: rgba(187, 223, 255, 0.669);
+}
+.header {
+    font-weight: 800;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text; 
+    background-image: repeating-radial-gradient(farthest-side at 5px 5px,#553c9a, #ee4b2b, #553c9a);
+    font-size: 54px;
+    padding: 20px 5px;
+}
+.ArtistScrollBox {
+    width: 79%;
+    height: 10%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 1%;
+    overflow-x: scroll;
+}
+.ArtistBox {
+    border: 2px;
+    padding-bottom: 15px;
+    border-style: solid;
+    border-color: black;
+    width: 24.25%;
+    scroll-snap-align: start;
+}
+.LearnMoreButton {
+    width: fit-content;
+    height: fit-content;
+    padding: 5px 10px;
+    color :rgb(255, 255, 255) ;
+    background-color: blueviolet;
+    border-width: 2px;
+    border-color: black;
+    border-radius: 6px;
+    transition-duration: 0.6s;
+    font-size: 15px;
+    cursor: pointer;
+}
+.LearnMoreButton:hover {
+    background-color: rgb(209, 163, 255); /* NotGreen */
+    color: rgb(0, 0, 0);
+}
+.ArtistImage {
+    object-fit: contain;
+    width: fit-content;
+    height: fit-content;
+    border-radius: 50%;
+
+}
+.ArtistImage-popup{
+    object-fit: contain;
+    width: fit-content;
+    height: fit-content;
+    border-radius: 50%;
+}
+.artist-preview{
+    text-align: center;
+}
+.artist-popup .overlay {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.7);
+    z-index: 1;
+    display: none;
+}
+.artist-popup .content{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    background: #fff;
+    width: fit-content;
+    height: fit-content;
+    z-index: 2;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+.CloseButton {
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    width: 30px;
+    height: 30px;
+}
+
+.artist-popup.active .overlay{
+    display: block;
+}
+.artist-popup.active .content{
+    transition: all 300ms ease-in-out;
+    transform: translate(-50%, -50%) scale(1);
+}
+footer{
+    margin: 20px;
+    position: sticky;
+}
+
+a{
+    text-decoration: none;
+    cursor: pointer;
+}
+
+ .artist-main-info{
+    margin: 7px;
+ }
+
+ .members{
+    margin: 7px;
+ }
+ .relations{
+    margin: 7px;
+}
+.all-info{
+    display: flex;
+    justify-content: space-between;
+}
+h2{
+    margin-bottom: 10px;
+}
+h3{
+    margin-bottom: 5px;
+}
+.errorBody{
+    width: 60%;
+    display: flex;
+    align-items: center;
+    
+}
+.image{
+    width: 50%;
+    padding-top: 20px;
+    margin-right: 20px;
+}
+.errorText{
+    width: 50%;
+    font-size: 32px;
+    float: right;
+}
+.backHome{
+    text-align: center;
+    font-size: 30px;
+    margin: 10px;
+    padding: 5px 10px;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: black;
+    border-radius: 10px;
+    border: 0px;
+    font-weight: 500;
+    box-shadow: 0px 0px 14px -20px #22A0FF;
+    background-image: linear-gradient(45deg, #464FFF 0%, #22A0FF  51%, #464FFF  100%);
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.backHome:hover {
+    background-position: right center;
+    color: #fff;
+    text-decoration: none;
+}
+
+.backHome:active {
+    transform: scale(0.95);
+}
